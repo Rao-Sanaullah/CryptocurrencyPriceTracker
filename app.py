@@ -4,7 +4,8 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 import time
-import talib  # For technical indicators
+import ta 
+
 
 # Streamlit App Title
 st.title("🚀 Cryptocurrency Price Tracker")
@@ -67,9 +68,9 @@ def fetch_historical_data(coin_id='bitcoin'):
 
 # Function to add technical indicators like RSI, SMA
 def add_technical_indicators(historical_data):
-    historical_data['RSI'] = talib.RSI(historical_data['Price'], timeperiod=14)  # RSI
-    historical_data['SMA_50'] = talib.SMA(historical_data['Price'], timeperiod=50)  # 50-Day Simple Moving Average
-    historical_data['SMA_200'] = talib.SMA(historical_data['Price'], timeperiod=200)  # 200-Day Simple Moving Average
+    historical_data['RSI'] = ta.RSI(historical_data['Price'], timeperiod=14)  # RSI
+    historical_data['SMA_50'] = ta.SMA(historical_data['Price'], timeperiod=50)  # 50-Day Simple Moving Average
+    historical_data['SMA_200'] = ta.SMA(historical_data['Price'], timeperiod=200)  # 200-Day Simple Moving Average
     return historical_data
 
 # User input for selecting cryptocurrencies for comparison
