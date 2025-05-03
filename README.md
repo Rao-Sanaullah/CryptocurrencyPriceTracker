@@ -2,7 +2,7 @@
 
 This Streamlit app allows you to **track real-time prices**, view **interactive 30-day historical charts**, and calculate your **portfolio value** for popular cryptocurrencies like Bitcoin, Ethereum, Dogecoin, and more — all powered by the CoinGecko API.
 
-🔗 **Live Demo**: [Your Streamlit Cloud Link Here](https://cryptotrac.streamlit.app/)  
+🔗 **Live Demo**: [Cryptocurrency Price Tracker](https://cryptotrac.streamlit.app/)  
 📁 **Source Code**: This repository  
 📸 **Author**: [Sanaullah](https://github.com/Rao-Sanaullah)
 
