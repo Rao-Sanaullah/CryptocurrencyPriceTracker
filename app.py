@@ -3,8 +3,7 @@ import requests
 import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
-import time
-import talib
+
 
 # Streamlit App Title
 st.title("🚀 Cryptocurrency Price Tracker")
