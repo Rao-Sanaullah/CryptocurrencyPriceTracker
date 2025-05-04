@@ -3,6 +3,8 @@ import requests
 import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
+import time
+time.sleep(1)  # Adds a 1-second delay
 
 
 # Streamlit App Title
@@ -28,11 +30,15 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Function to fetch real-time data from CoinGecko API
+@st.cache_data(ttl=60)  # Cache for 60 seconds
 def fetch_real_time_data(coin_id='bitcoin'):
     url = f"https://api.coingecko.com/api/v3/coins/{coin_id}"
     try:
         response = requests.get(url)
         # Check if the response was successful
+        if response.status_code == 429:
+            st.warning("Rate limit exceeded. Please wait a moment and try again.")
+
         if response.status_code == 200:
             return response.json()
         else:
